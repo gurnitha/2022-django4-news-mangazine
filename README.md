@@ -7,6 +7,7 @@ Github repository: https://github.com/gurnitha/2022-django4-news-mangazine
 ### 1. BASIC SETUP
 ------------------
 
+
 #### 1.1 Created django project 'config' and django app 'apps/newsmag'
 
         E:.
@@ -32,3 +33,15 @@ Github repository: https://github.com/gurnitha/2022-django4-news-mangazine
         new file:   config/urls.py
         new file:   config/wsgi.py
         new file:   manage.py
+
+
+#### 1.2 Created Views, Templates, Urls for home page, added and loaded static and media files 
+
+        modified:   .gitignore
+        new file:   apps/newsmag/templates/newsmag/index.html
+        new file:   apps/newsmag/urls.py
+        modified:   apps/newsmag/views.py
+        modified:   config/settings.py
+        modified:   config/urls.py
+
+        NOTE: :)
