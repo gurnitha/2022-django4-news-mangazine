@@ -175,3 +175,18 @@ Github repository: https://github.com/gurnitha/2022-django4-news-mangazine
         modified:   templates/shared/navbar/main_navbar.html
 
         NOTE: :)
+
+
+### 2. CRUD MAIN NAVBAR (CATEGORIES)
+------------------------------------
+
+
+#### 2.1. Create Category model and run migrations
+
+        modified:   README.md
+        modified:   apps/newsmag/admin.py
+        new file:   apps/newsmag/migrations/0001_initial.py
+        modified:   apps/newsmag/models.py
+
+
+
