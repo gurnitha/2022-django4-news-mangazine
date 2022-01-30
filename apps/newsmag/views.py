@@ -56,3 +56,19 @@ def CategoryUpdateView(request, category_id):
 	return render(request, 'newsmag/category_update.html', context)
 
 
+# VIEW: CategoryDeleteView
+def CategoryDeleteView(request, category_id):
+
+	category_id = int(category_id)
+
+	try:
+		cat_sel = Category.objects.get(id = category_id)
+	except Category.DoesNotExist:
+		return redirect('newsmag:homepage')
+
+	cat_sel.delete()
+	return redirect('newsmag:homepage')	
+
+	context = {'object':cat_sel}
+
+	return render(request, 'newsmag/category_delete.html', context)

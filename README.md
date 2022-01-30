@@ -258,3 +258,27 @@ Github repository: https://github.com/gurnitha/2022-django4-news-mangazine
 
         NEXT> DELETE categories
 
+
+#### 2.5. CRUD: DELETE category
+
+
+        STEPS:
+
+        1. In views: create CategoryDeleteView, and
+           add logic to delete a category
+        2. Create path
+        3. Test it out :)
+
+        modified:   README.md
+        new file:   apps/newsmag/templates/newsmag/category_delete.html
+        new file:   apps/newsmag/templates/newsmag/category_delete_confirm.html
+        modified:   apps/newsmag/urls.py
+        modified:   apps/newsmag/views.py
+
+        
+        NOTE: :)
+
+        There was no confirmation or message
+        about warning if you are sure to delete
+        the object.
+

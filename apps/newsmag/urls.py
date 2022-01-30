@@ -13,4 +13,5 @@ urlpatterns = [
 	# CRUD:Category
 	path('category-create/', CategoryCreateView, name='category_create'),
 	path('category-update/<int:category_id>/', CategoryUpdateView, name='category_update'),
+	path('category-delete/<int:category_id>/', CategoryDeleteView, name='category_delete'),
 ]
