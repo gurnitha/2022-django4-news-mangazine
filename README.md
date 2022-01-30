@@ -167,3 +167,11 @@ Github repository: https://github.com/gurnitha/2022-django4-news-mangazine
 
         modified:   README.md
         modified:   templates/shared/footer/copyright.html
+
+
+#### 1.8 Modified main_navbar
+
+        modified:   README.md
+        modified:   templates/shared/navbar/main_navbar.html
+
+        NOTE: :)
