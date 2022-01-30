@@ -151,3 +151,13 @@ Github repository: https://github.com/gurnitha/2022-django4-news-mangazine
         new file:   templates/shared/top_header.html
 
         NOTE: :)
+
+
+#### 1.6 Adding page title
+
+        modified:   README.md
+        modified:   apps/newsmag/templates/newsmag/index.html
+        modified:   templates/base.html
+        modified:   templates/shared/head.html
+
+        NOTE: :)
