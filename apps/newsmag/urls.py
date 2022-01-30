@@ -11,5 +11,6 @@ urlpatterns = [
 	path('', HomePageView, name='homepage'),
 
 	# CRUD:Category
-	path('create-category/', CategoryCreateView, name='create_category')
+	path('category-create/', CategoryCreateView, name='category_create'),
+	path('category-update/<int:category_id>/', CategoryUpdateView, name='category_update'),
 ]

@@ -6,6 +6,7 @@ from django.http import HttpResponse
 
 # Locals
 from apps.newsmag.forms import CategoryCreateForm
+from apps.newsmag.models import Category
 
 # Create your views here.
 
@@ -33,4 +34,25 @@ def CategoryCreateView(request):
 
 	else:
 		context = {'form':cat_create}
-		return render(request, 'newsmag/create_category.html', context)
+		return render(request, 'newsmag/category_create.html', context)
+
+
+# VIEW: CategoryUpdateView
+def CategoryUpdateView(request, category_id):
+
+	category_id = int(category_id)
+
+	try:
+		cat_sel = Category.objects.get(id = category_id)
+	except Category.DoesNotExist:
+		return redirect('newsmag:homepage')
+
+	cat_form = CategoryCreateForm(request.POST or None, instance = cat_sel)
+	if cat_form.is_valid():
+		cat_form.save()
+		return redirect('newsmag:homepage')
+
+	context = {'form':cat_form}
+	return render(request, 'newsmag/category_update.html', context)
+
+

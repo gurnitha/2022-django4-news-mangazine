@@ -193,11 +193,14 @@ Github repository: https://github.com/gurnitha/2022-django4-news-mangazine
 
         STEPS:
 
-        1. Create CategoryCreateForm
-        2. Add logic to CategoryCreateView method
-        3. Create create_category form file
+        1. In apps/newsmag create a new file: apps/newsmag/forms.py
+           and create CategoryCreateForm
+        2. In views, create CategoryCreateView method and Add logig it
+        3. In apps/newsmag create a new file: category_create.html and add form to it
            *** this form copied from source code of the django admin panel
-        4. Test it out and check the result :)
+        4. In category_create.html, loop and load form instance from the CategoryCreateView
+        5. Define the path in urls 
+        6. Test it out and check the result :)
 
         modified:   README.md
         new file:   apps/newsmag/forms.py
@@ -208,6 +211,7 @@ Github repository: https://github.com/gurnitha/2022-django4-news-mangazine
         NOTE: :)
 
         NEXT> USE TEMPLATETAGS to show categories to main navbar
+
 
 
 #### 2.3. CRUD: READ data categories in db and fetch them  to main navbar
@@ -233,4 +237,24 @@ Github repository: https://github.com/gurnitha/2022-django4-news-mangazine
         NEXT> UPDATE categories       
 
 
+#### 2.4. CRUD: UPDATE category
+
+        STEPS:
+
+        1. In views, create CategoryCreateView method and Add logig it
+        2. In apps/newsmag create a new file: category_update.html and add form to it
+           *** this form copied from source code of the django admin panel
+        3. In category_update.html, loop and load form instance from the CategoryCreateView
+        4. Define the path in urls 
+        5. Test it out and check the result :)
+
+        modified:   README.md
+        new file:   apps/newsmag/templates/newsmag/category_update.html
+        modified:   apps/newsmag/urls.py
+        modified:   apps/newsmag/views.py
+
+        
+        NOTE: :)
+
+        NEXT> DELETE categories
 
