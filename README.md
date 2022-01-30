@@ -210,6 +210,27 @@ Github repository: https://github.com/gurnitha/2022-django4-news-mangazine
         NEXT> USE TEMPLATETAGS to show categories to main navbar
 
 
+#### 2.3. CRUD: READ data categories in db and fetch them  to main navbar
+
+        STEPS:
+
+        1. Create custom_template: apps/newsmag/templatetags/custom_template.py
+        2. Define show_menu function in: apps/newsmag/templatetags/custom_template.py
+        3. Loop categories in: templates/shared/navbar/main_navbar.html
+        4. Load custom_template: templates/base.html
+        5. fetch show_menu in : templates/base.html
+
+        modified:   README.md
+        new file:   apps/newsmag/templatetags/__init__.py
+        new file:   apps/newsmag/templatetags/custom_template.py
+        modified:   templates/base.html
+        modified:   templates/shared/navbar/main_navbar.html
+
+        NOTE: 
+        
+        Well DONE :)
+
+        NEXT> UPDATE categories       
 
 
 

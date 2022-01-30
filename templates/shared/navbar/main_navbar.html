@@ -13,54 +13,35 @@
                                     Home
                                 </a>
                             </li>
+
+                            <!-- First 4 categories menu -->
+                            {% for category in categories %}
                             <li class="nav-item">
                                 <a href="politics.html" class="nav-link">
-                                    Politics
+                                   {{ category.name|title }}
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="business.html" class="nav-link">
-                                    Business
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="technology.html" class="nav-link">
-                                    Tech
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="technology.html" class="nav-link">
-                                    Sports
-                                </a>
-                            </li>
+                            {% endfor %}
+
+                            <!-- Dropdown menu -->
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     Categories
                                     <i class="bx bx-chevron-down"></i>
                                 </a>
                                 <ul class="dropdown-menu">
+
+                                    {% for category_dropdown in categories_dropdown %}
                                     <li class="nav-item">
                                         <a href="news.html" class="nav-link">
-                                            Videos
+                                           {{ category_dropdown.name|title }}
                                         </a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="news-right-sidebar.html" class="nav-link">
-                                            Health
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="news-left-sidebar.html" class="nav-link">
-                                            Culture
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="news-without-sidebar.html" class="nav-link">
-                                           Technologies
-                                        </a>
-                                    </li>
+                                    {% endfor %}
+                                    
                                 </ul>
                             </li>
+                            
                         </ul>
                         <div class="others-options d-flex align-items-center">
                             <div class="option-item">
