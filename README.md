@@ -161,3 +161,9 @@ Github repository: https://github.com/gurnitha/2022-django4-news-mangazine
         modified:   templates/shared/head.html
 
         NOTE: :)
+
+
+#### 1.7 Adding Develop with love by ING AFTER 63 on the footer 
+
+        modified:   README.md
+        modified:   templates/shared/footer/copyright.html
