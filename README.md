@@ -45,3 +45,19 @@ Github repository: https://github.com/gurnitha/2022-django4-news-mangazine
         modified:   config/urls.py
 
         NOTE: :)
+
+
+#### 1.3 Creating and extending base template
+
+        modified:   README.md
+        modified:   apps/newsmag/templates/newsmag/index.html
+        modified:   config/settings.py
+        new file:   templates/base.html
+
+        NOTE:
+
+        1. No errors in the browsers: Edge, Chrome and Firefox
+
+        SUPER TEMPLATE :)
+
+
