@@ -189,4 +189,27 @@ Github repository: https://github.com/gurnitha/2022-django4-news-mangazine
         modified:   apps/newsmag/models.py
 
 
+#### 2.2. CRUD: CREATE categories from the form
+
+        STEPS:
+
+        1. Create CategoryCreateForm
+        2. Add logic to CategoryCreateView method
+        3. Create create_category form file
+           *** this form copied from source code of the django admin panel
+        4. Test it out and check the result :)
+
+        modified:   README.md
+        new file:   apps/newsmag/forms.py
+        new file:   apps/newsmag/templates/newsmag/create_category.html
+        modified:   apps/newsmag/urls.py
+        modified:   apps/newsmag/views.py   
+        
+        NOTE: :)
+
+        NEXT> USE TEMPLATETAGS to show categories to main navbar
+
+
+
+
 

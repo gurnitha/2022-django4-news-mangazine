@@ -1,0 +1,129 @@
+<!-- apps/newsmag/templates/newsmag/create_category.html -->
+<!DOCTYPE html>
+
+<html lang="en-us" dir="ltr">
+<head>
+<title>Add category | Django site admin</title>
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+
+  <link rel="stylesheet" type="text/css" href="/static/admin/css/nav_sidebar.css">
+  <script src="/static/admin/js/nav_sidebar.js" defer></script>
+
+<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css">
+
+
+<script src="/admin/jsi18n/"></script>
+<script src="/static/admin/js/vendor/jquery/jquery.js"></script>
+<script src="/static/admin/js/calendar.js"></script>
+<script src="/static/admin/js/jquery.init.js"></script>
+<script src="/static/admin/js/admin/DateTimeShortcuts.js"></script>
+<script src="/static/admin/js/core.js"></script>
+<script src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script src="/static/admin/js/actions.js"></script>
+<script src="/static/admin/js/urlify.js"></script>
+<script src="/static/admin/js/prepopulate.js"></script>
+<script src="/static/admin/js/vendor/xregexp/xregexp.js"></script>
+
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
+    
+
+<meta name="robots" content="NONE,NOARCHIVE">
+</head>
+
+<body class=" app-newsmag model-category change-form"
+  data-admin-utc-offset="0">
+
+<!-- Container -->
+<div id="container">
+
+    
+    <!-- Header -->
+
+    <div id="header">
+        <div id="branding">
+            <h1 id="site-name"><a href="/admin/">Create Category</a></h1>
+        </div>
+    </div>
+
+    <!-- END Header -->
+    
+<div class="breadcrumbs">
+<a href="/admin/">Home</a>
+&rsaquo; <a href="/admin/newsmag/">Newsmag</a>
+&rsaquo; <a href="/admin/newsmag/category/">Categories</a>
+&rsaquo; Add category
+</div>
+
+    
+
+    <div class="main" id="main">
+      
+        
+          
+
+
+        
+      
+      <div class="content">
+        
+          
+        
+        <!-- Content -->
+        <div id="content" class="colM">
+          
+          <h1>Add category</h1>
+          
+          <div id="content-main">
+
+
+<!------------------------- FORM ------------------------->
+<form method="post" id="category_form" novalidate>
+    {% csrf_token %}
+
+    <fieldset class="module aligned ">
+
+       
+        <!-- Name field -->
+        {% for field in form %}<div class="form-row field-name">
+            <div>
+
+                <label 
+                    class="required" 
+                    for="id_name">
+                    {{field.label}}</label> 
+                
+                {{ field }}
+                   
+            </div>
+        </div>{% endfor %} 
+
+    </fieldset>
+
+    <div class="submit-row">
+        <input type="submit" value="Save" class="default" name="_save">
+        <input type="submit" value="Save and add another" name="_addanother">
+        <input type="submit" value="Save and continue editing" name="_continue">
+    </div>
+
+    <script id="django-admin-form-add-constants" src="/static/admin/js/change_form.js" data-model-name="category" async></script>
+    <script id="django-admin-prepopulated-fields-constants"src="/static/admin/js/prepopulate_init.js"data-prepopulated-fields="[{&quot;id&quot;: &quot;#id_slug&quot;, &quot;name&quot;: &quot;slug&quot;, &quot;dependency_ids&quot;: [&quot;#id_name&quot;], &quot;dependency_list&quot;: [&quot;name&quot;], &quot;maxLength&quot;: 255, &quot;allowUnicode&quot;: false}]">
+    </script>
+    </div>
+
+</form>
+
+</div>
+
+          
+          <br class="clear">
+        </div>
+        <!-- END Content -->
+        <div id="footer"></div>
+      </div>
+    </div>
+</div>
+<!-- END Container -->
+</body>
+</html>
