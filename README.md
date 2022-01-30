@@ -61,3 +61,54 @@ Github repository: https://github.com/gurnitha/2022-django4-news-mangazine
         SUPER TEMPLATE :)
 
 
+#### 1.4 Sagmenting the template and use template inheritance
+
+        modified:   README.md
+        modified:   apps/newsmag/templates/newsmag/index.html
+        new file:   apps/newsmag/templates/newsmag/partials/featured/featured.html
+        ..
+        new file:   apps/newsmag/templates/newsmag/shared/categories.html
+        ..
+        new file:   apps/newsmag/templates/newsmag/shared/tags.html
+
+        .
+        ├── LICENSE
+        ├── README.md
+        ├── apps
+        │ └── newsmag
+        │     ├── __init__.py
+        │     ├── admin.py
+        │     ├── apps.py
+        │     ├── migrations
+        │     ├── models.py
+        │     ├── templates
+        │     │ └── newsmag
+        │     │     ├── index.html
+        │     │     ├── partials
+        │     │     │ ├── featured
+        │     │     │ │ └── featured.html
+        │     │     │ └── most_popular
+        │     │     │     ├── business.html
+        │     │     │     ├── culture.html
+        │     │     │     ├── health.html
+        │     │     │     ├── most_popular_news.html
+        │     │     │     ├── politics.html
+        │     │     │     ├── sports.html
+        │     │     │     └── top_videos.html
+        │     │     └── shared
+        │     │         ├── categories.html
+        │     │         ├── featured_reports.html
+        │     │         ├── instagram.html
+        │     │         ├── latest_news.html
+        │     │         ├── most_shared.html
+        │     │         ├── popular_posts.html
+        │     │         ├── social_media.html
+        │     │         ├── subscribe_newsletter.html
+        │     │         └── tags.html
+        │     ├── tests.py
+        │     ├── urls.py
+        │     └── views.py
+        ├── config
+        ...
+
+        NOTE: :)
