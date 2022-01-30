@@ -61,7 +61,7 @@ Github repository: https://github.com/gurnitha/2022-django4-news-mangazine
         SUPER TEMPLATE :)
 
 
-#### 1.4 Sagmenting the template and use template inheritance
+#### 1.4 Template inheritance Part 1 - Sagmenting the home page template
 
         modified:   README.md
         modified:   apps/newsmag/templates/newsmag/index.html
@@ -110,5 +110,44 @@ Github repository: https://github.com/gurnitha/2022-django4-news-mangazine
         │     └── views.py
         ├── config
         ...
+
+        NOTE: :)
+
+
+#### 1.5 Template inheritance Part 2 - Sagmenting the base template
+
+        ├── manage.py
+        └── templates
+            ├── base.html
+            └── shared
+                ├── footer
+                │ ├── copyright.html
+                │ ├── logo_and_sosmed.html
+                │ ├── recent_posts.html
+                │ ├── subscribe_newsletter.html
+                │ └── useful_links.html
+                ├── head.html
+                ├── loader.html
+                ├── navbar
+                │ ├── logo.html
+                │ ├── main_navbar.html
+                │ └── search.html
+                ├── scripts.html
+                └── top_header.html
+
+        modified:   README.md
+        modified:   templates/base.html
+        new file:   templates/shared/footer/copyright.html
+        new file:   templates/shared/footer/logo_and_sosmed.html
+        new file:   templates/shared/footer/recent_posts.html
+        new file:   templates/shared/footer/subscribe_newsletter.html
+        new file:   templates/shared/footer/useful_links.html
+        new file:   templates/shared/head.html
+        new file:   templates/shared/loader.html
+        new file:   templates/shared/navbar/logo.html
+        new file:   templates/shared/navbar/main_navbar.html
+        new file:   templates/shared/navbar/search.html
+        new file:   templates/shared/scripts.html
+        new file:   templates/shared/top_header.html
 
         NOTE: :)
