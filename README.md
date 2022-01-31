@@ -356,3 +356,16 @@ Github repository: https://github.com/gurnitha/2022-django4-news-mangazine
         modified:   apps/newsmag/views.py
         modified:   apps/users/templates/users/login.html
         modified:   apps/users/views.py
+
+        NOTE: :)
+
+
+#### 3.4 USER Logout - Using django auth to log user out, showing/hiding menu username and logout, and showing/hiding menu login and register
+
+        modified:   README.md
+        new file:   apps/users/templates/registration/login.html
+        modified:   apps/users/urls.py
+        modified:   config/settings.py
+        modified:   templates/shared/top_header.html
+
+        NOTE: :)

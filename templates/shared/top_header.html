@@ -47,10 +47,26 @@
                                 </select>
                             </div>
                         </li>
+                        <!-- Showing/hidding Login, Logout, register -->
+                        {% if request.user.is_authenticated %}
                         <li>
                             <i class="bx bx-user"></i>
+                            <a href="{% url 'users:user_login' %}">{{ request.user.username }}</a>
+                        </li>
+                        <li>
+                            <i class='bx bx-log-out-circle' ></i>
+                            <a href="{% url 'users:user_logout' %}">Logout</a>
+                        </li>
+                        {% else %}
+                        <li>
+                            <i class='bx bx-log-in-circle'></i>
                             <a href="{% url 'users:user_login' %}">Login</a>
                         </li>
+                        <li>
+                            <i class='bx bxs-caret-right-circle' ></i>
+                            <a href="">Register</a>
+                        </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
