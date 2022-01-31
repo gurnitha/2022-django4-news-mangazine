@@ -5,6 +5,21 @@
 
 {% block content %}
 
+<!-- Messages -->
+{% if messages %}
+    <div class="shadow-custom messages 
+        alert alert-danger col-lg-4 mx-auto text-center">
+        {% for message in messages %}
+            {% if message.tags == 'error' %}
+                {{ message }}
+                <a href="" class="close">x</a>
+            {% endif %}
+
+        {% endfor %}
+    </div>
+{% endif %}
+
+<!-- End Message -->
 <div class="page-title-area">
         <div class="container">
             <div class="page-title-content">

@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
+from django.contrib import messages
 
 # Locals
 from apps.users.forms import UserLoginForm
@@ -87,6 +88,8 @@ def UserLoginView(request):
 				if user is not None:
 					login(request, user)
 					return redirect('newsmag:homepage')
+
+			messages.error(request, 'Incorrect email / password')
 
 	else:
 		form = UserLoginForm()

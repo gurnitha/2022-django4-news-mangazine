@@ -347,5 +347,12 @@ Github repository: https://github.com/gurnitha/2022-django4-news-mangazine
         new file:   templates/shared/admin/footer.html
         new file:   templates/shared/admin/head.html
 
-
         NOTE: :)
+
+
+#### 3.4 USER Login - Add flash message
+
+        modified:   README.md
+        modified:   apps/newsmag/views.py
+        modified:   apps/users/templates/users/login.html
+        modified:   apps/users/views.py
