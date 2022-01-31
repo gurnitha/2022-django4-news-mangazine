@@ -310,3 +310,20 @@ Github repository: https://github.com/gurnitha/2022-django4-news-mangazine
             └── shared
 
 
+#### 3.2 USER Login
+
+        STEPS:
+
+        1. Refer to DJANGO-LOGIN,REGISTER,LOGOUT.txt file in HOW-TO folder
+        2. Remember: Form model, Views and login.html
+        
+        modified:   README.md
+        new file:   apps/users/forms.py
+        new file:   apps/users/templates/users/login.html
+        new file:   apps/users/urls.py
+        modified:   apps/users/views.py
+        modified:   config/settings.py
+        modified:   config/urls.py
+        modified:   templates/shared/top_header.html
+
+        NOTE: :) :) :)
