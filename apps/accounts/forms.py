@@ -1,4 +1,4 @@
-# apps/users/forms.py
+# apps/accounts/forms.py
 
 # Django modules
 from django import forms

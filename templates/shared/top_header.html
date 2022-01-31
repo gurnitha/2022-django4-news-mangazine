@@ -51,20 +51,20 @@
                         {% if request.user.is_authenticated %}
                         <li>
                             <i class="bx bx-user"></i>
-                            <a href="{% url 'users:user_login' %}">{{ request.user.username }}</a>
+                            <a href="{% url 'user_login' %}">{{ request.user.username }}</a>
                         </li>
                         <li>
                             <i class='bx bx-log-out-circle' ></i>
-                            <a href="{% url 'users:user_logout' %}">Logout</a>
+                            <a href="{% url 'user_logout' %}">Logout</a>
                         </li>
                         {% else %}
                         <li>
                             <i class='bx bx-log-in-circle'></i>
-                            <a href="{% url 'users:user_login' %}">Login</a>
+                            <a href="{% url 'user_login' %}">Login</a>
                         </li>
                         <li>
                             <i class='bx bxs-log-in' ></i>
-                            <a href="{% url 'users:user_register' %}">Register</a>
+                            <a href="{% url 'user_register' %}">Register</a>
                         </li>
                         {% endif %}
                     </ul>

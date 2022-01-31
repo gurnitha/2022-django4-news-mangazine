@@ -1,4 +1,4 @@
-# apps/users/views.py
+# apps/accounts/views.py
 
 # Django modules
 from django.http import HttpResponse
@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 
 # Locals
-from apps.users.forms import UserLoginForm, UserRegistrationForm
+from apps.accounts.forms import UserLoginForm, UserRegistrationForm
 
 # Create your views here.
 
@@ -56,14 +56,14 @@ def UserRegisterView(request):
 						'User with given email already exists')
 					return render(
 						request,
-						'users/register.html',
+						'accounts/register.html',
 						{'user_form': user_form}
 					)
 			else:
 				messages.error(request, 'Passwords don\'t match')
 				return render(
 					request,
-					'users/register.html',
+					'accounts/register.html',
 					{'user_form': user_form}
 				)
 
@@ -78,7 +78,7 @@ def UserRegisterView(request):
 
 			return render(
 				request,
-				'users/register_done.html',
+				'accounts/register_done.html',
 				{'new_user': new_user}
 			)
 
@@ -86,7 +86,7 @@ def UserRegisterView(request):
 		user_form = UserRegistrationForm()
 
 	context = {'form':user_form}
-	return render(request, 'users/register.html', context)
+	return render(request, 'accounts/register.html', context)
 
 
 ''' Logic of the UserLoginView
@@ -101,7 +101,7 @@ def UserRegisterView(request):
     2. 	We will make use of that existing attributes, to make user to be able to login
        	to the app.
     
-    3. 	To do so, we need to create a new file inside the users app called 'forms.py'.
+    3. 	To do so, we need to create a new file inside the accounts app called 'forms.py'.
        	Inside it, we have to add a form. The form makes use 'username, and password'
        	exist in the auth app. We named the form as UserLoginForm.
 	
@@ -133,8 +133,8 @@ def UserRegisterView(request):
 		login.html. 
 
 	7. 	The last thing to do is to add in settings.py file the LOGIN_URL='app_name.login',
-	    in this case LOGIN_URL = 'users.login'. It is important to note, that is we named
-	    the url as 'users'. If we did not name the url, we simply add the LOGIN_URL to
+	    in this case LOGIN_URL = 'accounts.login'. It is important to note, that is we named
+	    the url as 'accounts'. If we did not name the url, we simply add the LOGIN_URL to
 	    settings.py as this LOGIN_URL='login'.
 
 	8. 	Once those things done, we can try it out and check the result.
@@ -169,7 +169,7 @@ def UserLoginView(request):
 		form = UserLoginForm()
 
 	context = {'form':form}
-	return render(request, 'users/login.html', context)
+	return render(request, 'accounts/login.html', context)
 
 
 # ============== END USER LOGIN, REGISTER AND LOGOUT ==========

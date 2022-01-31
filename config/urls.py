@@ -8,8 +8,9 @@ from django.conf import settings
 
 
 urlpatterns = [
-    # users
-    path('', include('apps.users.urls', namespace='users')),
+    # accounts
+    # path('accounts/', include('apps.accounts.urls', namespace='accounts')),
+    path('accounts/', include('apps.accounts.urls')),
     # newsmag
     path('', include('apps.newsmag.urls', namespace='newsmag')),
     # admin

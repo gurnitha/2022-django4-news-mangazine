@@ -393,4 +393,72 @@ Github repository: https://github.com/gurnitha/2022-django4-news-mangazine
         modified:   apps/users/views.py
         modified:   templates/shared/top_header.html
 
-        NEXT> Password change views
+
+#### 3.6 PASSWORD - Password change views
+
+        modified:   README.md
+        renamed:    apps/users/__init__.py -> apps/accounts/__init__.py
+        renamed:    apps/users/admin.py -> apps/accounts/admin.py
+        renamed:    apps/users/apps.py -> apps/accounts/apps.py
+        renamed:    apps/users/forms.py -> apps/accounts/forms.py
+        renamed:    apps/users/migrations/__init__.py -> apps/accounts/migrations/__init__.py
+        renamed:    apps/users/models.py -> apps/accounts/models.py
+        renamed:    apps/users/templates/users/login.html -> apps/accounts/templates/accounts/login.html
+        renamed:    apps/users/templates/users/register.html -> apps/accounts/templates/accounts/register.html
+        renamed:    apps/users/templates/users/register_done.html -> apps/accounts/templates/accounts/register_done.html
+        new file:   apps/accounts/templates/registration/password_change_done.html
+        new file:   apps/accounts/templates/registration/password_change_form.html
+        renamed:    apps/users/tests.py -> apps/accounts/tests.py
+        renamed:    apps/users/urls.py -> apps/accounts/urls.py
+        renamed:    apps/users/views.py -> apps/accounts/views.py
+        modified:   config/settings.py
+        modified:   config/urls.py
+        modified:   templates/shared/top_header.html
+   
+        E:.
+        ├───apps
+        │   ├───accounts
+        │   │   ├───templates
+        │   │   │   ├───accounts
+        │   │   │   └───registration
+        │   │   └───__pycache__
+        │   └───newsmag
+        │       ├───templates
+        │       │   └───newsmag
+        │       │       ├───crud
+        │       │       ├───partials
+        │       │       │   ├───featured
+        │       │       │   └───most_popular
+        │       │       └───shared
+        │       ├───templatetags
+        │   ├───static
+        │   │   ├───admin
+        │   │   └───assets
+        │   │       ├───css
+        │   │       ├───fonts
+        │   │       ├───img
+        │   └───__pycache__
+        └───templates
+            └───shared
+                ├───admin
+                ├───footer
+                └───navbar
+        
+        NOTE:
+
+        A lot of changes were made:
+
+        1. Change app name
+                FROM : apps/users
+                TO   : apps/accounts
+        2. accounts app must be placed on the top 
+           of the INSTALLED_APPS in settings.py
+        3. Othe changes were made because of the poin 1.
+
+        4. At last, now user can:
+           - register
+           - login
+           - logout
+           - change password 
+
+        :)

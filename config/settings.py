@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'apps.accounts.apps.AccountsConfig', # new accounts app
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Locals
-    'apps.users.apps.UsersConfig',
     'apps.newsmag.apps.NewsmagConfig',
 ]
 
@@ -139,6 +139,7 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,"media")
 
-LOGIN_URL = 'users.login'
+# LOGIN_URL = 'accounts:user_login' # app_name='accounts' and path name='login'
+LOGIN_URL = 'user_login' # app_name='accounts' and path name='login'
 LOGIN_REDIRECT_URL = 'newsmag:homepage'
 LOGOUT_REDIRECT_URL = 'newsmag:homepage'
