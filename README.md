@@ -282,3 +282,31 @@ Github repository: https://github.com/gurnitha/2022-django4-news-mangazine
         about warning if you are sure to delete
         the object.
 
+
+### 3. USERS APP
+----------------
+
+
+#### 3.1 Create Users app
+
+        .
+        ├── LICENSE
+        ├── README.md
+        ├── apps
+        │ ├── newsmag
+        │ └── users
+        ├── config
+        │ ├── __init__.py
+        │ ├── __pycache__
+        │ ├── asgi.py
+        │ ├── settings.py
+        │ ├── static
+        │ ├── urls.py
+        │ └── wsgi.py
+        ├── db.sqlite3
+        ├── manage.py
+        └── templates
+            ├── base.html
+            └── shared
+
+

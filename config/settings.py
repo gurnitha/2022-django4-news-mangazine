@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Locals
+    'apps.users.apps.UsersConfig',
     'apps.newsmag.apps.NewsmagConfig',
 ]
 
