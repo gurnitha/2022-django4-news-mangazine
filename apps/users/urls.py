@@ -10,5 +10,7 @@ from apps.users.views import *
 app_name = 'users'
 urlpatterns = [
 	path('login/', UserLoginView, name='user_login'),
-	path('logout/', auth_views.LogoutView.as_view(), name='user_logout')
+	path('logout/', auth_views.LogoutView.as_view(), name='user_logout'),
+	path('register/', UserRegisterView, name='user_register'),
+
 ]

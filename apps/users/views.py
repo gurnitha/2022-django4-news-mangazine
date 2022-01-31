@@ -8,9 +8,85 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 
 # Locals
-from apps.users.forms import UserLoginForm
+from apps.users.forms import UserLoginForm, UserRegistrationForm
 
 # Create your views here.
+
+
+# ============== USER REGISTER, LOGIN, AND LOGOUT ==============
+
+''' Logic of the UserRegisterView
+	-----------------------------
+
+	1. When the UserRegistrationForm form is submitted via 
+	POST action, we instantiate, validate, and clean it. 
+
+	2. During the registration process, a user submits the 
+	password twice. 
+	
+	3. If the provided passwords don’t match, we send
+	back an error message informing the user about this issue. 
+
+	4. If the passwords match, we check if a user with the 
+	provided email already exists. 
+
+	5. If a user with this email already exists, we let the user 
+	know via an error message. 
+
+	6. In case no issues arise, we proceed to the user creation 
+	and render the register_done.html template.
+
+'''
+
+# VIEW: UserRegisterView
+def UserRegisterView(request):
+
+	if request.method == 'POST':
+		user_form = UserRegistrationForm(request.POST)
+		if user_form.is_valid():
+			clean_form = user_form.cleaned_data
+
+			email = clean_form['email']
+			password = clean_form['password']
+			password2 = clean_form['password2']
+
+			if password == password2:
+				if User.objects.filter(email=email).exists():
+					messages.error(request,
+						'User with given email already exists')
+					return render(
+						request,
+						'users/register.html',
+						{'user_form': user_form}
+					)
+			else:
+				messages.error(request, 'Passwords don\'t match')
+				return render(
+					request,
+					'users/register.html',
+					{'user_form': user_form}
+				)
+
+			# Create a new user object
+			new_user = User.objects.create_user(
+				first_name=clean_form['first_name'],
+				last_name=clean_form['last_name'],
+				username=clean_form['username'],
+				email=email,
+				password=password
+			)
+
+			return render(
+				request,
+				'users/register_done.html',
+				{'new_user': new_user}
+			)
+
+	else:
+		user_form = UserRegistrationForm()
+
+	context = {'form':user_form}
+	return render(request, 'users/register.html', context)
 
 
 ''' Logic of the UserLoginView
@@ -63,8 +139,6 @@ from apps.users.forms import UserLoginForm
 
 	8. 	Once those things done, we can try it out and check the result.
 '''
-
-# ============== USER LOGIN, REGISTER AND LOGOUT ==============
 
 # VIEW: UserLoginView
 def UserLoginView(request):

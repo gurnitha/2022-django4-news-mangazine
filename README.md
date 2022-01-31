@@ -369,3 +369,28 @@ Github repository: https://github.com/gurnitha/2022-django4-news-mangazine
         modified:   templates/shared/top_header.html
 
         NOTE: :)
+
+
+#### 3.5 USER Registration - Register a new user
+
+        STEPS:
+
+        1. Refer to DJANGO-LOGIN, REGISTER-LOGOUT.txt
+        2. Pay attention to:
+                - form action
+                - form method
+                - form model
+                - view logic
+                - avoid to have the same codes in different folder open at once
+                  in your text editor
+
+        modified:   README.md
+        modified:   apps/users/forms.py
+        renamed:    apps/users/templates/registration/login.html -> apps/users/templates/users/login.html
+        new file:   apps/users/templates/users/register.html
+        new file:   apps/users/templates/users/register_done.html
+        modified:   apps/users/urls.py
+        modified:   apps/users/views.py
+        modified:   templates/shared/top_header.html
+
+        NEXT> Password change views
