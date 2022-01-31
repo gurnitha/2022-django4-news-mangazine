@@ -327,3 +327,25 @@ Github repository: https://github.com/gurnitha/2022-django4-news-mangazine
         modified:   templates/shared/top_header.html
 
         NOTE: :) :) :)
+
+
+#### 3.3 House keeping - codes re-organization
+
+        deleted:    apps/newsmag/templates/newsmag/category_create.html
+        deleted:    apps/newsmag/templates/newsmag/category_delete.html
+        deleted:    apps/newsmag/templates/newsmag/category_delete_confirm.html
+        deleted:    apps/newsmag/templates/newsmag/category_update.html
+        new file:   apps/newsmag/templates/newsmag/crud/category_create.html
+        new file:   apps/newsmag/templates/newsmag/crud/category_delete.html
+        new file:   apps/newsmag/templates/newsmag/crud/category_delete_confirm.html
+        new file:   apps/newsmag/templates/newsmag/crud/category_update.html
+        modified:   apps/newsmag/views.py
+        modified:   config/asgi.py
+        modified:   config/settings.py
+        modified:   config/wsgi.py
+        new file:   templates/base_admin.html
+        new file:   templates/shared/admin/footer.html
+        new file:   templates/shared/admin/head.html
+
+
+        NOTE: :)

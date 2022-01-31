@@ -34,7 +34,7 @@ def CategoryCreateView(request):
 
 	else:
 		context = {'form':cat_create}
-		return render(request, 'newsmag/category_create.html', context)
+		return render(request, 'newsmag/crud/category_create.html', context)
 
 
 # VIEW: CategoryUpdateView
@@ -53,7 +53,7 @@ def CategoryUpdateView(request, category_id):
 		return redirect('newsmag:homepage')
 
 	context = {'form':cat_form}
-	return render(request, 'newsmag/category_update.html', context)
+	return render(request, 'newsmag/crud/category_update.html', context)
 
 
 # VIEW: CategoryDeleteView
@@ -71,4 +71,4 @@ def CategoryDeleteView(request, category_id):
 
 	context = {'object':cat_sel}
 
-	return render(request, 'newsmag/category_delete.html', context)
+	return render(request, 'newsmag/crud/category_delete.html', context)

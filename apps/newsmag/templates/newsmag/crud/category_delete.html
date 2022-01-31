@@ -1,0 +1,45 @@
+<!-- apps/newsmag/templates/newsmag/category_delete.html -->
+{% extends 'base_admin.html' %}
+{% load static %}
+
+{% block title %} Add Category {% endblock title %}
+
+{% block content %}
+        <!-- Container -->
+        <div id="container">
+            <!-- Header -->
+            <div id="header">
+                <div id="branding">
+                    <h1 id="site-name"><a href="/admin/">Delete Category</a></h1>
+                </div>
+            </div>
+            <!-- END Header -->
+            <div class="breadcrumbs">
+                <a href="/admin/">Home</a>
+                &rsaquo; <a href="/admin/newsmag/">Newsmag</a>
+                &rsaquo; <a href="/admin/newsmag/category/">Categories</a>
+                &rsaquo; _Politics
+            </div>
+            <div class="main" id="main">
+                <div class="content">
+                    <!-- Content -->
+                    <div id="content" class="colM">
+                        <h1>Delete category</h1>
+                        <div id="content-main">
+                        <!-------------------- FORM -------------------->
+                            <form method="post" id="category_form" novalidate>
+                                {% csrf_token %}
+                                <div>
+                                    <fieldset class="module aligned ">
+                                        {% for field in form %}
+                                        <div class="form-row field-name">
+                                            <div>
+                                                <label 
+                                                    class="required" 
+                                                    for="id_name">{{field.label}}</label>
+                                                {{ field }}
+                                            </div>
+                                        </div>
+                                        {% endfor %} 
+                                    </fieldset>
+{% endblock content %}
