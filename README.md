@@ -488,3 +488,21 @@ Github repository: https://github.com/gurnitha/2022-django4-news-mangazine
 
         NOW :)
 
+
+### 4. EXTENDING USER MODEL
+---------------------------
+
+
+#### 4.1 USER MODEL - Creating user Profile
+
+        modified:   README.md
+        modified:   apps/accounts/admin.py
+        new file:   apps/accounts/migrations/0001_initial.py
+        modified:   apps/accounts/models.py
+
+        NOTE:
+
+        1. This is a preparation to create user Profile.
+        2. This model will be use in UserRegisterView in the accounts/views.py
+
+        DONE: :)        
