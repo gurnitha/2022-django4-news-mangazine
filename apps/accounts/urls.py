@@ -14,7 +14,10 @@ urlpatterns = [
 	path('login/', UserLoginView, name='user_login'),
 	path('logout/', auth_views.LogoutView.as_view(), name='user_logout'),
 	path('register/', UserRegisterView, name='user_register'),
-	
+
+	# Profile
+	path('profile/', UserProfileView, name='user_profile'),
+
 	# Password changed
 	path('password_change/', auth_views.PasswordChangeView.as_view(), name='password_change'),
 	path('password_change/done/', auth_views.PasswordChangeDoneView.as_view(), name='password_change_done'),

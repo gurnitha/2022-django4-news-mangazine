@@ -506,3 +506,20 @@ Github repository: https://github.com/gurnitha/2022-django4-news-mangazine
         2. This model will be use in UserRegisterView in the accounts/views.py
 
         DONE: :)        
+
+
+#### 4.2 USER MODEL - Creating user profile
+
+        modified:   README.md
+        modified:   apps/accounts/forms.py
+        new file:   apps/accounts/migrations/0002_remove_profile_email.py
+        modified:   apps/accounts/models.py
+        new file:   apps/accounts/templates/accounts/profile.html
+        modified:   apps/accounts/urls.py
+        modified:   apps/accounts/views.py
+        modified:   templates/shared/top_header.html
+
+        NOTE:
+
+        Refer to HOW-TO: 6. DJANGO-Creating user profile
+

@@ -6,9 +6,15 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 # Locals
-from apps.accounts.forms import UserLoginForm, UserRegistrationForm
+from apps.accounts.forms import (
+	UserLoginForm, 
+	UserRegistrationForm,
+	UserUpdateForm,
+	UserUpdateProfileForm)
+from apps.accounts.models import Profile
 
 # Create your views here.
 
@@ -75,6 +81,9 @@ def UserRegisterView(request):
 				email=email,
 				password=password
 			)
+
+			# Create the user profile
+			Profile.objects.create(user=new_user)
 
 			return render(
 				request,
@@ -173,3 +182,141 @@ def UserLoginView(request):
 
 
 # ============== END USER LOGIN, REGISTER AND LOGOUT ==========
+
+
+# ========================== USER PROFILE =====================
+
+
+''' The logic of Creating User Profile
+    ----------------------------------
+1. We have successfully extended our basic User model by implementing
+Profile model. 
+
+2. As for next step, let’s create a customer profile section. We
+want to show user information there. This means showing data from both
+User and Profile models. User will be also able to edit the account
+information. 
+
+3. We will create two forms to handle this functionality: UserUpdateForm and
+UserUpdateProfileForm. 
+
+Note: They are done already in apps/accounts/forms.py file.
+
+4. Now move to accounts/views.py. We start by decorating our 
+UserProfileView view with @login_required decorator,
+which requires a user to be logged in. 
+
+5. If a user is not logged in, this view redirects visitor to the login page.
+
+6. But when a user logged in, and visits the profile page, we render 
+an accounts/profile.html template and provide a profile form responsible 
+for handling our user data.
+
+7. This form is provided with the instance of existing User and Profile models
+that are supposed to be displayed and updated if required.
+
+8. When our form is submitted via a POST request, we first check if a user with
+the given email already exists. 
+
+9. If such user already exists, we check if it’s us.
+If so, we then proceed and save our forms with associated User and Profile
+instances.
+
+10. Now we need to create a template for showing our profile page. Go ahead
+and create a profile.html template inside the templates/accounts directory
+within the accounts application. Add the following code to it:
+
+11. Now we need to modify urls.py file in the account directory and add the
+following URL pattern to the file:
+apps/accounts/urls.py
+#...
+path('profile/', views.profile, name='profile'),
+
+12. And finally, add our profile URL to the navbar 
+
+#...
+ {% if request.user.is_authenticated %}
+<li>
+    <i class="bx bx-user"></i>
+    <a href="{% url 'user_profile' %}">{{ request.user.username }}</a>
+</li>
+# ...
+
+13. Make sure the local development server is running and visit
+http://127.0.0.1:8000/. The email address in the navbar will contain a link to
+the user profile. 
+
+14. Go ahead and click on that link. You will see:
+We are greeted with the exception RelatedObjectDoesNotExist. 
+
+Well, what does that mean? 
+
+Check the exception value below that; User has no profile.
+Remember that our associated profile is created upon user creation. We have
+created our superuser at the beginning of the project, long before our Profile
+model. Let’s remedy this issue. Open
+http://127.0.0.1:8000/admin/accounts/profile/add/ and create Profile record
+manually:
+
+Select a user from the dropdown, fill in required data, and click on Save:
+
+15. Now let’s try to access the profile page
+http://127.0.0.1:8000/accounts/profile/ again. We are greeted with a profile
+page. It contains all User and Profile information along with an Update
+profile and Change password links:
+
+16. Let’s test our Update profile functionality. Fill in some new data and click on
+the Update profile link. After the profile update, we are also notified by a
+success message:
+
+17. If we tried to update the email address, which is already in our database and
+used by another user, we would receive a following error message:
+
+'''
+
+
+# VIEW: UserProfileView
+@login_required
+def UserProfileView(request):
+
+	if request.method == 'POST':
+		email = request.POST['email']
+		user = None
+
+		try:
+			user = User.objects.get(email=email)
+		except User.DoesNotExist:
+			pass
+
+		if user is None or user.id == request.user.id:
+			user_form = UserUpdateForm(
+				instance=request.user,
+				data=request.POST
+			)
+
+			profile_form = UserUpdateProfileForm(
+				instance=request.user.profile,
+				data=request.POST,
+			)
+
+			if user_form.is_valid() and profile_form.is_valid():
+				user_form.save()
+				profile_form.save()
+				messages.success(request, 'Profile was updated successfully')
+		
+		else:
+			messages.error(request, 'User with given email already exists')
+		return redirect('user_profile')
+
+	else:
+		user_form = UserUpdateForm(instance=request.user)
+		profile_form = UserUpdateProfileForm(instance=request.user.profile)
+
+	context = {
+		'user_form': user_form,
+		'profile_form': profile_form
+	}
+
+	return render(request, 'accounts/profile.html', context)
+
+# ======================== ENDUSER PROFILE ====================

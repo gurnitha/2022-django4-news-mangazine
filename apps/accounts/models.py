@@ -11,7 +11,7 @@ from django.conf import settings
 class Profile(models.Model):
 	user 			= models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 	phone_number 	= models.CharField(max_length=20, blank=True)
-	email 			= models.CharField(max_length=100, blank=True)
+	# email 			= models.CharField(max_length=100, blank=True)
 	address 		= models.CharField(max_length=250, blank=True)
 	postal_code 	= models.CharField(max_length=20, blank=True)
 	city 			= models.CharField(max_length=100, blank=True)
