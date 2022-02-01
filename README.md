@@ -462,3 +462,29 @@ Github repository: https://github.com/gurnitha/2022-django4-news-mangazine
            - change password 
 
         :)
+
+
+#### 3.7 PASSWORD - Password reset views
+
+        modified:   README.md
+        modified:   apps/accounts/templates/accounts/login.html
+        new file:   apps/accounts/templates/registration/password_reset_complete.html
+        new file:   apps/accounts/templates/registration/password_reset_confirm.html
+        new file:   apps/accounts/templates/registration/password_reset_done.html
+        new file:   apps/accounts/templates/registration/password_reset_email.html
+        new file:   apps/accounts/templates/registration/password_reset_form.html
+        modified:   apps/accounts/urls.py
+        modified:   config/settings.py
+
+        NOTE:
+
+        The book does not provied instruction to
+        add this "EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' in settings.py.
+
+        Whithout EMAIL_BACKEND, it produced this error: ConnectionRefusedError at /password-reset/ [WinError 10061] No connection could be made because the target machine actively refused it
+
+        Solution found here:
+        https://stackoverflow.com/questions/57353548/connectionrefusederror-at-password-reset-winerror-10061-no-connection-could
+
+        NOW :)
+
